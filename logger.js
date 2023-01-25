@@ -265,8 +265,10 @@ let logger = {
 
         // Stringify each member of the array
         if (type == '[object Array]') {
+          var tempBuffer = buffer + '  ';
+          
           for (i = 0; i < o.length; i++) {
-            parts.push(stringify(o[i], visited));
+            parts.push(stringify(o[i], visited, tempBuffer));
           }
           return '[' + parts.join(', ') + ']';
         }
