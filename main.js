@@ -62,5 +62,5 @@ console.log([{
   },
                   { name:'b', from: 167 }],
 },{},{}]);
-console.log({'a': 'a'}, {'b': 'b'});
+console.log({a: 'a'}, {'b': 'b'});
 
