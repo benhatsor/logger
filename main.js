@@ -7,6 +7,13 @@ function logCallback(type, data, rawData) {
     
     rawData.forEach((item, index) => {
       
+      if (data[index] === 'null' ||
+          data[index] === 'undefined') {
+        
+        data[index] = '<span class="token '+ data[index] +'">' + data[index] + '</span>';
+        
+      }
+      
       const type = ({}).toString.call(item);
       
       // remove ' from strings
