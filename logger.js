@@ -270,7 +270,7 @@ let logger = {
           for (i = 0; i < o.length; i++) {
             parts.push(stringify(o[i], visited, tempBuffer));
           }
-          return buffer + '[\n' +tempBuffer+ parts.join(', ') + '\n]';
+          return '[\n' +tempBuffer+ parts.join(', ') + buffer + '\n]';
         }
 
         // Fake array – very tricksy, get out quickly
