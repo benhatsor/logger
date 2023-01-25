@@ -280,7 +280,7 @@ let logger = {
         var newBuffer = buffer + '  ';
 
         // Dive down if we're less than 2 levels deep
-        if (buffer.length / 2 < 2) {
+        if (buffer.length / 2 < 1) {
 
           var names = [];
           // Some objects don't like 'in', so just skip them
@@ -293,7 +293,13 @@ let logger = {
           names.sort(sortci);
           for (i = 0; i < names.length; i++) {
             try {
-              parts.push(newBuffer + names[i] + ': ' + stringify(o[names[i]], visited, newBuffer));
+              
+              //if (buffer.length / 2 < 2) {
+              
+                parts.push(newBuffer + names[i] + ': ' + stringify(o[names[i]], visited, newBuffer));
+                
+              //}
+              
             } catch (e) {}
           }
 
