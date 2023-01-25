@@ -13,7 +13,7 @@ function logCallback(type, data, rawData) {
       
       if (type === '[object String]') {
         
-        data[index] = logger.utils.escapeHTML(item);
+        data[index] = '<span class="token string">' + logger.utils.escapeHTML(item) + '</span>';
         
       }
       
