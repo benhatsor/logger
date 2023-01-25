@@ -16,7 +16,21 @@ function logCallback(type, data, rawData) {
         
       } else if (type === '[object Number]') {
         
-        data[index] = '<span class="token number">' + logger.utils.escapeHTML(item) + '</span>';
+        data[index] = '<span class="token number">' + item + '</span>';
+        
+      } else if (type === '[object Boolean]') {
+        
+        data[index] = '<span class="token boolean">' + item + '</span>';
+        
+      } else if (type === '[object Object]' ||
+                 type === '[object Array]' ||
+                 type === '[object Function]') {
+        
+        data[index] = '<span class="language-js">' + item + '</span>';
+        
+      } else {
+        
+        data[index] = '<span class="language-js">' + item + '</span>';
         
       }
       
