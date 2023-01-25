@@ -294,7 +294,7 @@ let logger = {
           return type;
         }
 
-        var typeStr = type + ' ',
+        var typeStr = ''/* type + ' ' */,
             newBuffer = buffer + '  ';
 
         // Dive down if we're less than 2 levels deep
