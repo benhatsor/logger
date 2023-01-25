@@ -282,7 +282,7 @@ let logger = {
         var newBuffer = buffer + '  ';
 
         // Dive down if we're less than 2 levels deep
-        if (buffer.length / 2 < 1) {
+        if (buffer.length / 2 < 2) {
 
           var names = [];
           // Some objects don't like 'in', so just skip them
