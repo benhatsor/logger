@@ -333,7 +333,7 @@ let logger = {
         
         const excludeTypes = ['Object', 'Array', 'Number', 'Boolean', 'Function', 'String'];
         
-        if (excludeTypes.includes(typeStr)) {
+        if (excludeTypes.includes(typeStr.slice(0, -1))) {
           typeStr = '';
         }
         
