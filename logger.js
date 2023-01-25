@@ -98,7 +98,7 @@ let logger = {
       resp = callback(data);
       
       // log
-      logger.log(funcName, resp);
+      logger.log(funcName, resp, data);
       
       // show in browser console
       if (logger.options.enableBrowserConsole) {
@@ -117,31 +117,15 @@ let logger = {
     
     log: (data) => {
       
-      let resp;
-      
-      if (logger.options.parseOutput) {
-       
-        // parse data
-        resp = logger.utils.parseLogData(data);
-        
-      } else {
-        
-        // escape HTML
-        resp = logger.utils.escapeHTMLlogData(data);
-        
-      }
+      // parse data
+      const resp = logger.utils.parseLogData(data);
       
       return resp;
       
     },
     
     /* table: (data) => {
-      
-      if (!data) return data;
-      
-      // escape HTML
-      const resp = logger.utils.escapeHTMLlogData(data);
-      
+
       // return raw data
       return resp;
       
@@ -186,21 +170,6 @@ let logger = {
       
     },
     
-    escapeHTMLlogData: (data) => {
-
-      const resp = [];
-
-      // escape HTML
-      data.forEach((item, index) => {
-
-        resp[index] = logger.utils.escapeHTML(item);
-
-      });
-      
-      return resp;
-
-    },
-    
     // escape HTML
     escapeHTML: (str) => {
     
@@ -217,25 +186,13 @@ let logger = {
     /**
      * Stringify
      * Inspect native browser objects and functions.
+     * Note: Does not escape HTML.
      * https://github.com/jsbin/jsbin
      */
     stringify: (function () {
 
       var sortci = function(a, b) {
         return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
-      };
-
-      var htmlEntities = function (str) {
-        //return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-        
-        const p = document.createElement('p');
-        p.appendChild(document.createTextNode(str));
-      
-        let resp = p.innerHTML;
-        resp = resp.replaceAll(/"/g, "&quot;").replaceAll(/'/g, "&#039;");
-      
-        return resp;
-      
       };
 
       /**
@@ -283,7 +240,7 @@ let logger = {
             // Notify the user that a circular object was found and, if available,
             // show the object's outerHTML (for body and elements)
             return '[' + /* circular ' + */ type.slice(1) +
-              ('outerHTML' in o ? ' :\n' + /*htmlEntities*/(o.outerHTML).split('\n').join('\n' + buffer) : '')
+              ('outerHTML' in o ? ':\n' + /*htmlEntities*/(o.outerHTML).split('\n').join('\n' + buffer) : '')
           }
         }
 
