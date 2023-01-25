@@ -178,7 +178,7 @@ let logger = {
       // parse data       
       data.forEach((item, index) => {
         
-        resp[index] = logger.utils.stringify(item);
+        resp[index] = htmlEntities(logger.utils.stringify(item));
 
       });
       
@@ -274,7 +274,7 @@ let logger = {
           return o.toString().split('\n  ').join('\n' + buffer);
         }
         if (type == '[object String]') {
-          return "'" + htmlEntities(o.replace(/'/g, "\\'")) + "'";
+          return "'" + /*htmlEntities*/(o.replace(/'/g, "\\'")) + "'";
         }
 
         // Check for circular references
@@ -283,7 +283,7 @@ let logger = {
             // Notify the user that a circular object was found and, if available,
             // show the object's outerHTML (for body and elements)
             return '[' + /* circular ' + */ type.slice(1) +
-              ('outerHTML' in o ? ' :\n' + htmlEntities(o.outerHTML).split('\n').join('\n' + buffer) : '')
+              ('outerHTML' in o ? ' :\n' + /*htmlEntities*/(o.outerHTML).split('\n').join('\n' + buffer) : '')
           }
         }
 
