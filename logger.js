@@ -117,12 +117,17 @@ let logger = {
     
     log: (data) => {
       
-      let resp = data;
+      let resp;
       
       if (logger.options.parseOutput) {
        
         // parse data
-        resp = logger.utils.parseLogData(resp);
+        resp = logger.utils.parseLogData(data);
+        
+      } else {
+        
+        // escape HTML
+        resp = logger.utils.escapeHTMLlogData(data);
         
       }
       
@@ -134,14 +139,8 @@ let logger = {
       
       if (!data) return data;
       
-      let resp = [];
-      
       // escape HTML
-      data.forEach((item, index) => {
-        
-        resp[index] = logger.utils.escapeHTML(item);
-        
-      });
+      const resp = logger.utils.escapeHTMLlogData(data);
       
       // return raw data
       return resp;
@@ -174,15 +173,32 @@ let logger = {
 
     parseLogData: (data) => {
       
+      const resp = [];
+      
       // parse data       
       data.forEach((item, index) => {
-
-        data[index] = logger.utils.stringify(item);
+        
+        resp[index] = logger.utils.stringify(item);
 
       });
       
-      return data;
+      return resp;
       
+    },
+    
+    escapeHTMLlogData: (data) => {
+
+      const resp = [];
+
+      // escape HTML
+      data.forEach((item, index) => {
+
+        resp[index] = logger.utils.escapeHTML(item);
+
+      });
+      
+      return resp;
+
     },
     
     // escape HTML
