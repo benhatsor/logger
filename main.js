@@ -3,17 +3,20 @@ const output = document.querySelector('.output');
 
 function logCallback(type, data, rawData) {
   
-  // remove ' from strings
-  
   if (data) {
     
     rawData.forEach((item, index) => {
       
       const type = ({}).toString.call(item);
       
+      // remove ' from strings
       if (type === '[object String]') {
         
         data[index] = '<span class="token string">' + logger.utils.escapeHTML(item) + '</span>';
+        
+      } else if (type === '[object Number]') {
+        
+        data[index] = '<span class="token number">' + logger.utils.escapeHTML(item) + '</span>';
         
       }
       
