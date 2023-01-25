@@ -4,10 +4,13 @@ const output = document.querySelector('.output');
 function logCallback(type, data) {
   
   // remove ' from strings
+  
+  const stringChar = escapeHTML('\'');
+  
   data.forEach((item, index) => {
     
-    if (item.startsWith('\'') &&
-        item.endsWith('\'')) {
+    if (item.startsWith(stringChar) &&
+        item.endsWith(stringChar)) {
       
       data[index] = item.slice(1).slice(0, -1);
       
