@@ -178,7 +178,7 @@ let logger = {
       // parse data       
       data.forEach((item, index) => {
         
-        resp[index] = htmlEntities(logger.utils.stringify(item));
+        resp[index] = logger.utils.escapeHTML(logger.utils.stringify(item));
 
       });
       
