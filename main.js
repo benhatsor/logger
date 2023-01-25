@@ -54,4 +54,12 @@ console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
 console.log();
 //console.log('output', output);
 console.log(() => { console.log('hello') });
+console.log([{
+  name: 'one',
+  subscriptions: [{
+    name: 'a',
+    from: 134
+  },
+                  { name:'b', from: 167 }],
+},{},{}])
 
