@@ -63,9 +63,7 @@ console.debug('debug');
 console.info('info');
 console.warn('warn');
 console.error('error');
-console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
 console.log();
-//console.log('output', output);
 console.log(() => { console.log('hello') });
 console.log(null, undefined);
 console.log([{
@@ -82,5 +80,9 @@ console.log([{
   ],
 }, {}, {}]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
-console.log(true, !false, 234.342, logger.utils.escapeHTML);
+console.log(true, false, !false, 234.342, -403.3342342434234342432342234543, logger.utils.escapeHTML);
+console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
+console.log();
+console.log(output);
+console.log(window);
 
