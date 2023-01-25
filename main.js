@@ -3,6 +3,18 @@ const output = document.querySelector('.output');
 
 function logCallback(type, data) {
   
+  // remove ' from strings
+  data.forEach((item, index) => {
+    
+    if (item.startsWith('\'') &&
+        item.endsWith('\'')) {
+      
+      data[index] = item.slice(1).slice(0, -1);
+      
+    }
+    
+  });
+  
   // add spaces between adjacent arguments
   data = data.join(' ');
   
