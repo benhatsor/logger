@@ -326,11 +326,19 @@ let logger = {
 
         }
 
-        // If nothing was gathered, return empty object
-        if (!parts.length) return typeStr.replace('[object ', '').replace(']', '') + '{...}';
+        typeStr = typeStr.replace('[object ', '').replace(']', '');
 
+        // If nothing was gathered, return empty object
+        if (!parts.length) return typeStr + '{...}';
+        
+        const excludeTypes = ['Object', 'Array', 'Number', 'Boolean', 'Function', 'String'];
+        
+        if (excludeTypes.includes(typeStr)) {
+          typeStr = '';
+        }
+        
         // Return the indented object with new lines
-        return /* typeStr + */ '{\n' + parts.join(',\n') + '\n' + buffer + '}';
+        return typeStr + '{\n' + parts.join(',\n') + '\n' + buffer + '}';
       };
     }())
     
