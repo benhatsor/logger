@@ -1,26 +1,25 @@
 
 const output = document.querySelector('.output');
 
-function logCallback(type, data) {
+function logCallback(type, data, rawData) {
   
   // remove ' from strings
   
-  const stringChar = logger.utils.escapeHTML('"');
-  
-  data.forEach((item, index) => {
+  if (data) {
     
-    if (item.startsWith(stringChar) &&
-        item.endsWith(stringChar)) {
+    rawData.forEach((item, index) => {
       
-      item = item.slice(stringChar.length).slice(0, -stringChar.length);
+      const type = ({}).toString.call(item);
       
-      item = item.replaceAll('\\' + stringChar, stringChar);
+      if (type === '[object String]') {
+        
+        data[index] = logger.utils.escapeHTML(item);
+        
+      }
       
-      data[index] = item;
-            
-    }
+    });
     
-  });
+  }
   
   // add spaces between adjacent arguments
   data = data.join(' ');
