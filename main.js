@@ -51,4 +51,7 @@ console.log('hello');
 console.log('hello', 'world"', {'a': 'b', 'c': '"d"', 'e': "'f'"});
 console.table({'a':'A','b':'B'}, 5, 6);
 console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
+console.log();
+console.log('output', output);
+console.log(() => { console.log('hello') });
 
