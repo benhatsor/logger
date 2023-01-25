@@ -122,7 +122,7 @@ let logger = {
       if (logger.options.parseOutput) {
        
         // parse data
-        resp = logger.utils.parseLogData(data);
+        resp = logger.utils.parseLogData(resp);
         
       }
       
