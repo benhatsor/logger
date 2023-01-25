@@ -63,6 +63,7 @@ console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
 console.log();
 //console.log('output', output);
 console.log(() => { console.log('hello') });
+console.log(null, undefined);
 console.log([{
   name: 'one',
   subscriptions: [
@@ -78,5 +79,4 @@ console.log([{
 }, {}, {}]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
 console.log(true, !false, 234.342, logger.utils.escapeHTML);
-console.log(null, undefined);
 
