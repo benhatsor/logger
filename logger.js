@@ -266,9 +266,9 @@ let logger = {
         // Stringify each member of the array
         if (type == '[object Array]') {
           for (i = 0; i < o.length; i++) {
-            parts.push(stringify(o[i], visited));
+            parts.push(stringify(o[i], visited, buffer));
           }
-          return '[' + parts.join(', ') + buffer + ']';
+          return '[' + parts.join(', ') + ']';
         }
 
         // Fake array – very tricksy, get out quickly
