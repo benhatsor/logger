@@ -293,13 +293,7 @@ let logger = {
           names.sort(sortci);
           for (i = 0; i < names.length; i++) {
             try {
-              
-              //if (buffer.length / 2 < 2) {
-              
-                parts.push(newBuffer + names[i] + ': ' + stringify(o[names[i]], visited, newBuffer));
-                
-              //}
-              
+              parts.push(newBuffer + names[i] + ': ' + stringify(o[names[i]], visited, newBuffer));
             } catch (e) {}
           }
 
