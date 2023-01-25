@@ -56,11 +56,16 @@ console.log();
 console.log(() => { console.log('hello') });
 console.log([{
   name: 'one',
-  subscriptions: [{
-    name: 'a',
-    from: 134
-  },
-                  { name:'b', from: 167 }],
-},{},{}]);
+  subscriptions: [
+    {
+      name: 'a',
+      from: 134
+    },
+    {
+      name: 'b',
+      from: 167
+    }
+  ],
+}, {}, {}]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
 
