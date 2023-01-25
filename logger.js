@@ -239,8 +239,9 @@ let logger = {
           if (o === visited[vi]) {
             // Notify the user that a circular object was found and, if available,
             // show the object's outerHTML (for body and elements)
-            return '[' + /* circular ' + */ type.slice(1) /*+
-              ('outerHTML' in o ? ':\n' + (o.outerHTML).split('\n').join('\n' + buffer) : '')*/
+            return '[' + /* circular ' + */ type.slice(1) +
+              ('nodeName' in o ? o.nodeName.toLowerCase() + buffer : '')
+              /*('outerHTML' in o ? ':\n' + (o.outerHTML).split('\n').join('\n' + buffer) : '')*/
           }
         }
 
