@@ -226,7 +226,16 @@ let logger = {
       };
 
       var htmlEntities = function (str) {
-        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        //return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        
+        const p = document.createElement('p');
+        p.appendChild(document.createTextNode(str));
+      
+        let resp = p.innerHTML;
+        resp = resp.replaceAll(/"/g, "&quot;").replaceAll(/'/g, "&#039;");
+      
+        return resp;
+      
       };
 
       /**
