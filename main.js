@@ -68,4 +68,5 @@ console.log([{
   ],
 }, {}, {}]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
+console.log(null, undefined);
 
