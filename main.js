@@ -35,5 +35,5 @@ logger.init(logCallback, window);
 
 console.log('hello');
 console.log('hello', 'world"', {'a': 'b', 'c': '"d"', 'e': "'f'"});
-console.table({'a':'A','b':'B'});
+console.table({'a':'A','b':'B'}, 5, 6);
 
