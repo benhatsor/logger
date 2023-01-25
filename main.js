@@ -12,6 +12,8 @@ function logCallback(type, data, rawData) {
         
         data[index] = '<span class="token '+ data[index] +'">' + data[index] + '</span>';
         
+        return;
+        
       }
       
       const type = ({}).toString.call(item);
