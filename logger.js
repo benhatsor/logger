@@ -1,6 +1,6 @@
 
 
-const logger = {
+let logger = {
 
   log: null,
   cW: null,
