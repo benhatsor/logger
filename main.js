@@ -5,7 +5,7 @@ function logCallback(type, data) {
   
   // remove ' from strings
   
-  const stringChar = escapeHTML('\'');
+  const stringChar = logger.utils.escapeHTML('\'');
   
   data.forEach((item, index) => {
     
