@@ -265,12 +265,10 @@ let logger = {
 
         // Stringify each member of the array
         if (type == '[object Array]') {
-          var tempBuffer = buffer + '  ';
-          
           for (i = 0; i < o.length; i++) {
-            parts.push(stringify(o[i], visited, tempBuffer));
+            parts.push(stringify(o[i], visited));
           }
-          return '[\n' +tempBuffer+ parts.join(', ') + buffer + '\n]';
+          return '[' + parts.join(', ') + buffer + ']';
         }
 
         // Fake array – very tricksy, get out quickly
