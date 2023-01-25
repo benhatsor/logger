@@ -12,8 +12,12 @@ function logCallback(type, data) {
     if (item.startsWith(stringChar) &&
         item.endsWith(stringChar)) {
       
-      data[index] = item.slice(stringChar.length).slice(0, -stringChar.length);
+      item = item.slice(stringChar.length).slice(0, -stringChar.length);
       
+      item = item.replaceAll('\\' + stringChar, stringChar);
+      
+      data[index] = item;
+            
     }
     
   });
