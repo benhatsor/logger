@@ -327,7 +327,7 @@ let logger = {
         }
 
         // If nothing was gathered, return empty object
-        if (!parts.length) return typeStr.replace('[object ', '').replace(']', '') + '{…}';
+        if (!parts.length) return typeStr.replace('[object ', '').replace(']', '') + '{...}';
 
         // Return the indented object with new lines
         return /* typeStr + */ '{\n' + parts.join(',\n') + '\n' + buffer + '}';
