@@ -274,7 +274,7 @@ let logger = {
           return o.toString().split('\n  ').join('\n' + buffer);
         }
         if (type == '[object String]') {
-          return "'" + /*htmlEntities*/(o.replace(/'/g, "\\'")) + "'";
+          return '"' + /*htmlEntities*/(o.replace(/"/g, '\\"')) + '"';
         }
 
         // Check for circular references
