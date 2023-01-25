@@ -231,17 +231,32 @@ let logger = {
           return o.toString().split('\n  ').join('\n' + buffer);
         }
         if (type == '[object String]') {
-          return '"' + /*htmlEntities*/(o.replace(/"/g, '\\"')) + '"';
+          return '"' + (o.replace(/"/g, '\\"')) + '"';
         }
 
         // Check for circular references
         for (vi = 0; vi < visited.length; vi++) {
           if (o === visited[vi]) {
-            // Notify the user that a circular object was found and, if available,
-            // show the object's outerHTML (for body and elements)
-            return '[' + /* circular ' + */ type.slice(1) +
-              ('nodeName' in o ? o.nodeName.toLowerCase() + buffer : '')
-              /*('outerHTML' in o ? ':\n' + (o.outerHTML).split('\n').join('\n' + buffer) : '')*/
+            // Show that a circular object was found and, if available,
+            // show the object's nodeName (for nodes)
+            
+            const typeStr = type.replace('[object ', '').replace(']', '');
+            
+            if ('nodeName' in o) {
+              
+              return o.nodeName.toLowerCase();
+              
+            } else {
+              
+              return typeStr;
+              
+            }
+            
+            /*
+            return '[' + circular ' + type.slice(1) +
+              ('outerHTML' in o ? ':\n' + (o.outerHTML).split('\n').join('\n' + buffer) : '')
+            */
+            
           }
         }
 
