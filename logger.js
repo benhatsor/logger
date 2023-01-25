@@ -307,5 +307,5 @@ const logger = {
     
   }
     
-}
+};
 
