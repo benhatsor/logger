@@ -303,8 +303,8 @@ let logger = {
           return type;
         }
 
-        var typeStr = type + ' ',
-            newBuffer = buffer + '  ';
+        var typeStr = type + ' ';
+        var newBuffer = buffer + '  ';
 
         // Dive down if we're less than 2 levels deep
         if (buffer.length / 2 < 2) {
@@ -327,7 +327,7 @@ let logger = {
         }
 
         // If nothing was gathered, return empty object
-        if (!parts.length) return typeStr + '{}';
+        if (!parts.length) return typeStr.replace('[object ', '').replace(']', '') + '{…}';
 
         // Return the indented object with new lines
         return /* typeStr + */ '{\n' + parts.join(',\n') + '\n' + buffer + '}';
