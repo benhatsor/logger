@@ -282,7 +282,7 @@ let logger = {
           if (o === visited[vi]) {
             // Notify the user that a circular object was found and, if available,
             // show the object's outerHTML (for body and elements)
-            return '[circular ' + type.slice(1) +
+            return '[' + /* circular ' + */ type.slice(1) +
               ('outerHTML' in o ? ' :\n' + htmlEntities(o.outerHTML).split('\n').join('\n' + buffer) : '')
           }
         }
@@ -303,7 +303,7 @@ let logger = {
           return type;
         }
 
-        var typeStr = ''/* type + ' ' */,
+        var typeStr = type + ' ',
             newBuffer = buffer + '  ';
 
         // Dive down if we're less than 2 levels deep
@@ -327,10 +327,10 @@ let logger = {
         }
 
         // If nothing was gathered, return empty object
-        if (!parts.length) return typeStr + '{ ... }';
+        if (!parts.length) return typeStr + '{}';
 
         // Return the indented object with new lines
-        return typeStr + '{\n' + parts.join(',\n') + '\n' + buffer + '}';
+        return /* typeStr + */ '{\n' + parts.join(',\n') + '\n' + buffer + '}';
       };
     }())
     
