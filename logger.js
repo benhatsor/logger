@@ -230,10 +230,10 @@ let logger = {
         if (type == '[object Function]') {
           
           // if not in object
-          if (buffer / 2 < 1) {
+          if (buffer.length / 2 < 1) {
           
             // return function
-            return o.toString().split('\n  ').join('\n' + buffer);
+            return o.toString();
         
           } else {
             
