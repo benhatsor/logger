@@ -256,7 +256,26 @@ let logger = {
           
         }
         if (type == '[object String]') {
-          return '"' + (o.replace(/"/g, '\\"')) + '"';
+          
+          const string = o;
+          
+          // if not in object
+          if (buffer / 2 < 1) {
+            
+            return string;
+            
+          } else {
+            
+            // replace newlines with "\n"
+            string = string.replaceAll(/\n/g, '\\n');
+            
+            // surround string with quotes
+            string = '"' + string.replaceAll(/"/g, '\\"') + '"';
+            
+            return string; 
+            
+          }
+          
         }
 
         // Check for circular references
