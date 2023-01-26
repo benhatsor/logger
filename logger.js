@@ -260,13 +260,8 @@ let logger = {
           let string = o;
           
           // if not in object
-          if (buffer / 2 < 1) {
+          if (buffer.length / 2 < 1) {
             
-            
-            // if string dosen't exist, add quotes
-            if (string == '') {
-              string = '""';
-            }
             return string;
             
           } else {
