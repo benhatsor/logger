@@ -355,7 +355,7 @@ let logger = {
         } else { // if type isn't in list
           
           // if object has a node name
-          if ('nodeName' in o) {
+          if ('nodeName' in o && o.nodeName !== '') {
               
             typeStr = o.nodeName.toLowerCase();
               
