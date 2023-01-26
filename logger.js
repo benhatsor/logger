@@ -262,6 +262,11 @@ let logger = {
           // if not in object
           if (buffer / 2 < 1) {
             
+            
+            // if string dosen't exist, add quotes
+            if (string == '') {
+              string = '""';
+            }
             return string;
             
           } else {
