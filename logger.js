@@ -352,6 +352,15 @@ let logger = {
         
         if (excludeTypes.includes(typeStr.slice(0, -1))) {
           typeStr = '';
+        } else { // if type isn't in list
+          
+          // if object has a node name
+          if ('nodeName' in o) {
+              
+            typeStr = o.nodeName.toLowerCase();
+              
+          }
+          
         }
         
         // Return the indented object with new lines
