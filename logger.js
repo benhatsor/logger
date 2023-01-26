@@ -228,7 +228,32 @@ let logger = {
           return o ? 'true' : 'false';
         }
         if (type == '[object Function]') {
-          return o.toString().split('\n  ').join('\n' + buffer);
+          
+          // if not in object
+          if (buffer / 2 < 1) {
+          
+            // return function
+            return o.toString().split('\n  ').join('\n' + buffer);
+        
+          } else {
+            
+            const funcName = o.name;
+            
+            // if function dosen't have a name
+            if (funcName == '') {
+              
+              // return function
+              return o.toString().split('\n  ').join('\n' + buffer);
+              
+            } else {
+              
+              // return function name
+              return o.name;
+              
+            }
+            
+          }
+          
         }
         if (type == '[object String]') {
           return '"' + (o.replace(/"/g, '\\"')) + '"';
