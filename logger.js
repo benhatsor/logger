@@ -233,7 +233,7 @@ let logger = {
           if (buffer.length / 2 < 1) {
           
             // return function
-            return o.toString().split('\n    ').join('\n' + buffer);
+            return o.toString()//.split('\n    ').join('\n' + buffer);
         
           } else {
             
