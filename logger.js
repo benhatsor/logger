@@ -257,7 +257,7 @@ let logger = {
         }
         if (type == '[object String]') {
           
-          const string = o;
+          let string = o;
           
           // if not in object
           if (buffer / 2 < 1) {
