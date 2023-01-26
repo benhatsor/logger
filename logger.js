@@ -248,7 +248,7 @@ let logger = {
             } else {
               
               // return function name
-              return 'f' + o.name + '()';
+              return 'f ' + o.name + '()';
               
             }
             
