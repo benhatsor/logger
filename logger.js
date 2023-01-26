@@ -267,7 +267,7 @@ let logger = {
           } else {
             
             // replace newlines with "\n"
-            string = string.replaceAll(/\n/g, '\\n');
+            string = string.replace(/\n/g, '\\n');
             
             // surround string with quotes
             string = '"' + string.replaceAll(/"/g, '\\"') + '"';
