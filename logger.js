@@ -357,7 +357,7 @@ let logger = {
           // if object has a node name
           if ('nodeName' in o && o.nodeName !== '') {
               
-            typeStr = o.nodeName.toLowerCase();
+            typeStr = o.nodeName.toLowerCase() + ' ';
               
           }
           
