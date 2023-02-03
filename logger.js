@@ -251,7 +251,7 @@ let logger = {
               
               //logger.overrides.log(func);
               
-              return func;
+              return resp;
               
             } else {
               
