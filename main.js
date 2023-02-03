@@ -69,6 +69,9 @@ console.log(null, undefined);
 console.log([
 {
   name: 'one',
+  object: {
+    a: 'a'
+  },
   subscriptions: [
     {
       name: 'a',
@@ -78,10 +81,7 @@ console.log([
       name: 'b',
       from: 167
     }
-  ],
-  object: {
-    a: 'a'
-  }
+  ]
 }, {}, {}
 ]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
