@@ -234,8 +234,22 @@ let logger = {
           // if not in object
           if (buffer.length / 2 < 1) {
           
-            // return function
-            return func;//.split('\n    ').join('\n' + buffer);
+            if (func.startsWith('function')) {
+              
+              // replace 'function' with 'f'
+              resp = resp.replace('function', '');
+              if (resp.startsWith(' ')) resp = resp.replace(' ', '');
+              
+              resp = 'f ' + resp;
+              
+              return resp;
+              
+            } else {
+              
+              // return function
+              return func;
+              
+            }
         
           } else {
             
