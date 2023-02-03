@@ -241,11 +241,6 @@ let logger = {
             
             if (func.startsWith('function')) {
               
-              //let resp = func.replace('function', '');
-              
-              // remove space from start of function
-              //if (resp.startsWith(' ')) resp.replace(' ', '');
-              
               // return function without contents
               let resp = func.split(')')[0] + ')';
               
