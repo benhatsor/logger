@@ -247,9 +247,12 @@ let logger = {
               //if (resp.startsWith(' ')) resp.replace(' ', '');
               
               // return function without contents
-              resp = 'f ' + func.split(')')[0] + ')';
+              let resp = func.split(')')[0] + ')';
               
-              //logger.overrides.log(func);
+              resp = resp.replace('function', '');
+              if (resp.startsWith(' ')) resp = resp.replace(' ', '');
+              
+              resp = 'f ' + resp;
               
               return resp;
               
