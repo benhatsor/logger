@@ -56,6 +56,8 @@ function logCallback(type, data, rawData) {
 
 logger.init(logCallback, window);
 
+
+
 console.log('hello');
 console.log('hello', 'world"', {'a': 'b', 'c': '"d"', 'e': "'f'"});
 console.table({'a':'A','b':'B'}, 5, 6);
@@ -90,9 +92,13 @@ console.log(true, false, !false, 234.342, -403.3342342434234342432342234543, log
 console.log(' ');
 console.log(' ');
 console.log(' ');
-console.log('Larger stuff:');
+console.log('---');
 console.log(' ');
+console.log({a: logCallback});
+
+/*
 console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
 console.log(output);
 console.log(window);
+*/
 
