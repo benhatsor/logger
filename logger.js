@@ -233,7 +233,8 @@ let logger = {
           
           // if not in object
           if (buffer.length / 2 < 1) {
-          
+            
+            /*
             if (func.startsWith('function')) {
               
               // replace 'function' with 'f'
@@ -250,6 +251,9 @@ let logger = {
               return func;
               
             }
+            */
+            
+            return func;
         
           } else {
             
@@ -258,10 +262,13 @@ let logger = {
               // return function without contents
               let resp = func.split(')')[0] + ')';
               
+              /*
+              // replace 'function' with 'f'
               resp = resp.replace('function', '');
               if (resp.startsWith(' ')) resp = resp.replace(' ', '');
               
               resp = 'f ' + resp;
+              */
               
               return resp;
               
