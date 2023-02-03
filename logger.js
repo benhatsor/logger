@@ -292,11 +292,11 @@ let logger = {
             
             if ('nodeName' in o) {
               
-              return 'circular ' + o.nodeName.toLowerCase();
+              return o.nodeName.toLowerCase();
               
             } else {
               
-              return 'circular ' + typeStr;
+              return typeStr;
               
             }
             
