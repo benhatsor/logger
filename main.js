@@ -78,6 +78,9 @@ console.log([{
       from: 167
     }
   ],
+  object: {
+    a: 'a'
+  }
 }, {}, {}]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
 console.log(true, false, !false, 234.342, -403.3342342434234342432342234543, logger.utils.escapeHTML);
