@@ -241,7 +241,7 @@ let logger = {
             
             if (func.startsWith('function')) {
               
-              console.log(func);
+              logger.overrides.log(func);
               
               func = func.replace('function ', '');
               
@@ -249,7 +249,7 @@ let logger = {
               if (func.startsWith('function')) func = func.replace('function', '');
               
               // return function without contents
-              return 'f ' + func.slice(')')[0] + ')';
+              return 'f ' + func.split(')')[0] + ')';
               
             } else {
               
