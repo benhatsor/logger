@@ -44,13 +44,13 @@ function logCallback(type, data, rawData) {
       }
       
     });
-    
+  
+    // add spaces between adjacent arguments
+    data = data.join(' ');
+  
+    output.innerHTML += '<div class="item '+ type +'"><a class="type">[' + type + ']</a> <a class="data">' + data + '</a></div>';
+  
   }
-  
-  // add spaces between adjacent arguments
-  data = data.join(' ');
-  
-  output.innerHTML += '<div class="item '+ type +'"><a class="type">[' + type + ']</a> <a class="data">' + data + '</a></div>';
   
 }
 
