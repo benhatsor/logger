@@ -241,6 +241,8 @@ let logger = {
             
             if (func.startsWith('function')) {
               
+              console.log(func);
+              
               func = func.replace('function ', '');
               
               // replace functions without names
