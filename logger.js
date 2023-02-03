@@ -241,13 +241,13 @@ let logger = {
             
             if (func.startsWith('function')) {
               
-              let resp = func.replace('function', '');
+              //let resp = func.replace('function', '');
               
               // remove space from start of function
-              if (resp.startsWith(' ')) resp.replace(' ', '');
+              //if (resp.startsWith(' ')) resp.replace(' ', '');
               
               // return function without contents
-              resp = 'f ' + resp.split(')')[0] + ')';
+              resp = 'f ' + func.split(')')[0] + ')';
               
               //logger.overrides.log(func);
               
