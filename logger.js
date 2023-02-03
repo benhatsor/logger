@@ -237,7 +237,7 @@ let logger = {
             if (func.startsWith('function')) {
               
               // replace 'function' with 'f'
-              resp = resp.replace('function', '');
+              resp = func.replace('function', '');
               if (resp.startsWith(' ')) resp = resp.replace(' ', '');
               
               resp = 'f ' + resp;
