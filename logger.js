@@ -249,7 +249,11 @@ let logger = {
               if (func.startsWith('function')) func = func.replace('function', '');
               
               // return function without contents
-              return 'f ' + func.split(')')[0] + ')';
+              func = 'f ' + func.split(')')[0] + ')';
+              
+              console.log(func);
+              
+              return func;
               
             } else {
               
