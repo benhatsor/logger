@@ -229,26 +229,30 @@ let logger = {
         }
         if (type == '[object Function]') {
           
+          const func = o.toString();
+          
           // if not in object
           if (buffer.length / 2 < 1) {
           
             // return function
-            return o.toString();//.split('\n    ').join('\n' + buffer);
+            return func;//.split('\n    ').join('\n' + buffer);
         
           } else {
             
-            const funcName = o.name;
-            
-            // if function dosen't have a name
-            if (funcName == '') {
+            if (func.startsWith('function')) {
               
-              // return function
-              return o.toString().split('\n  ').join('\n' + buffer);
+              func = func.replace('function ', '');
+              
+              // replace functions without names
+              if (func.startsWith('function')) func = func.replace('function', '');
+              
+              // return function without contents
+              return 'f ' + func.slice(')')[0] + ')';
               
             } else {
               
-              // return function name
-              return 'f ' + o.name + '()';
+              // return function
+              return func.split('\n  ').join('\n' + buffer);
               
             }
             
