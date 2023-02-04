@@ -102,3 +102,9 @@ console.log(output);
 console.log(window);
 
 
+
+
+
+// function getStack() { console.log(new Error().stack.split('\n')[2]) }
+
+
