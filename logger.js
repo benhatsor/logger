@@ -16,7 +16,6 @@ let logger = {
   options: {
     
     disabledCb: [],
-    parseOutput: true,
     enableBrowserConsole: true,
     
   },
