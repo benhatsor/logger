@@ -97,6 +97,13 @@ console.log([
 ]);
 console.log({a: 'a'}, ['a', 'b'], {'b': 'b'});
 console.log(true, false, !false, 234.342, -403.3342342434234342432342234543, logger.utils.escapeHTML);
+const test = {
+  keys: 5,
+  get keysCollected() {
+    return this.keys;
+  }
+};
+console.log(test);
 console.log(' ');
 console.log(' ');
 console.log(' ');
