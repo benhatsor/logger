@@ -262,7 +262,7 @@ let logger = {
             */
             
             // return function
-            return func.split('\n  ').join('\n' + buffer);
+            return func;
         
           } else {
             
