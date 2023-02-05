@@ -1,5 +1,11 @@
 
 
+// todo: error handling
+// --------------------
+// next steps:
+// - custom Prism theme for objects & arrays
+// - origin file & line number with getStack() - see main.js
+
 let logger = {
 
   log: null,
