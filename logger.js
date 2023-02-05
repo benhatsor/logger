@@ -46,7 +46,9 @@ let logger = {
   override: () => {
     
     // get all console functions in context
-    const consoleFuncs = Object.keys(logger.cW.console);
+    // (using .getOwnPropertyNames() instead of .keys() to get innumerable props)
+    const consoleFuncs = Object.getOwnPropertyNames(logger.cW.console)
+                          .filter(item => (typeof logger.cW.console[item] === 'function'));
     
     consoleFuncs.forEach(func => {
       
