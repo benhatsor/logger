@@ -73,13 +73,13 @@ let logger = {
     });
     
     // override "clear()" function
-    if ('clear' in logger.cW &&
-        typeof logger.cW.clear === 'function') {
+    //if ('clear' in logger.cW &&
+    //  typeof logger.cW.clear === 'function') {
       
       // override console function
       logger.overrideFunc('clear', logger.cW);
       
-    }
+    //}
     
   },
   
