@@ -318,15 +318,16 @@ let logger = {
             
             const typeStr = type.replace('[object ', '').replace(']', '');
             
+            /*
             if ('nodeName' in o) {
               
               return o.nodeName.toLowerCase();
               
-            } else {
+            } else {*/
               
-              return typeStr;
+            return typeStr;
               
-            }
+            /*}*/
             
             /*
             return '[' + circular ' + type.slice(1) +
@@ -386,12 +387,13 @@ let logger = {
           typeStr = '';
         } else { // if type isn't in list
           
+          /*
           // if object has a node name
           if ('nodeName' in o && o.nodeName !== '') {
               
             typeStr = o.nodeName.toLowerCase() + ' ';
               
-          }
+          }*/
           
         }
         
