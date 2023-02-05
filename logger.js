@@ -73,7 +73,7 @@ let logger = {
     });
     
     // override "clear()" function
-    if (logger.cW.clear) {
+    if ('clear' in logger.cW) {
       
       // override console function
       logger.overrideFunc('clear', logger.cW);
