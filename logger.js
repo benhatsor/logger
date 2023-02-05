@@ -313,12 +313,12 @@ let logger = {
         // Check for circular references
         for (vi = 0; vi < visited.length; vi++) {
           if (o === visited[vi]) {
-            // Show that a circular object was found and, if available,
-            // show the object's nodeName (for nodes)
+            // Show that a circular object was found
             
             const typeStr = type.replace('[object ', '').replace(']', '');
             
             /*
+            // if available, show the object's nodeName (for nodes)
             if ('nodeName' in o) {
               
               return o.nodeName.toLowerCase();
