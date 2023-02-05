@@ -7,9 +7,14 @@ body {
   font-family: system-ui, SF Pro, sans-serif;
 }
 
-.output .item {
+.output {
   font-family: ui-monospace, SF Mono, monospace;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.token.language-js {
+  word-break: break-all;
 }
 
 .token.string {
