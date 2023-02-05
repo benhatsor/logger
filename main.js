@@ -3,6 +3,14 @@ const output = document.querySelector('.output');
 
 function logCallback(type, data, rawData) {
   
+  if (type === 'clear') {
+    
+    output.innerHTML = '';
+    
+    return;
+    
+  }
+  
   if (data && data.length !== 0) {
     
     rawData.forEach((item, index) => {
