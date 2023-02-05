@@ -261,7 +261,8 @@ let logger = {
             }
             */
             
-            return func;
+            // return function
+            return func.split('\n  ').join('\n' + buffer);
         
           } else {
             
