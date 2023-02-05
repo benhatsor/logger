@@ -114,8 +114,8 @@ console.log({a: logCallback, b: logCallback}, logCallback);
 
 console.log(' ');
 console.log([1, 2, 3, { 'a': 3, 2: 'a', b: window }]);
-// console.log(output);
-// console.log(window);
+console.log(output);
+console.log(window);
 
 
 
