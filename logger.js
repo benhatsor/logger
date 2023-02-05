@@ -325,7 +325,7 @@ let logger = {
               
             } else {*/
               
-            return typeStr;
+            return typeStr + ' {...}';
               
             /*}*/
             
