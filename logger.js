@@ -81,6 +81,17 @@ let logger = {
       
     }
     
+    // override errors (dosen't override console.error)
+    logger.cW.addEventListener('error', (e) => {
+      
+      const resp = 'Uncaught ' + e.error.stack;
+      const data = e;
+      
+      // log
+      logger.log('error', resp, data);
+      
+    });
+    
   },
   
   
