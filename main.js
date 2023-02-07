@@ -21,6 +21,8 @@ function logCallback(type, data, rawData) {
   
   if (data && data.length !== 0) {
     
+    console.log(type);
+    
     rawData.forEach((item, index) => {
       
       if (data[index] === 'null' ||
