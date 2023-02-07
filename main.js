@@ -11,6 +11,12 @@ function logCallback(type, data, rawData) {
     
   }
   
+  if (type === 'errorEvent') {
+    
+    output.innerHTML += '<div class="item '+ type +'"><a class="type">[' + type + ']</a> <a class="data">' + data + '</a></div>';
+    
+  }
+  
   if (data && data.length !== 0) {
     
     rawData.forEach((item, index) => {
