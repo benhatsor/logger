@@ -21,7 +21,7 @@ function logCallback(type, data, rawData) {
   
   if (data && data.length !== 0) {
     
-    console.log(type);
+    logger.overrides.log(type);
     
     rawData.forEach((item, index) => {
       
