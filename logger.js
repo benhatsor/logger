@@ -88,7 +88,7 @@ let logger = {
       const data = e;
       
       // log
-      logger.log('error', resp, data);
+      logger.log('errorEvent', resp, data);
       
     });
     
